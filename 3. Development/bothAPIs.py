@@ -57,3 +57,10 @@ b. the timestamp
 
 We should probably create a dict with all that 
 data"""
+"""
+TxData = {"Amount": response['data']['token_info']['value'],
+          "Decimals": response['data']['token_info']['decimals']
+          }
+print(TxData)
+"""
+print(response['data'][0]['decimals'])
