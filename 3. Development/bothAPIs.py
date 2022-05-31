@@ -24,19 +24,37 @@ headers = {"Accept": "application/json"}
 
 response = requests.get(url, headers=headers)
 
-pprint.pprint(response.json())
+# Here we are creating a dict with the data we want
+target_data = {}
+for item in response.json()['data']:
+    target_data.update({"value":item['value']})
+    target_data.update({"Tx_id":item['transaction_id']})
+    target_data.update({"Type":item['type']})
+    target_data.update({"name":item['token_info']['name']})
+    target_data.update({"decimals":item['token_info']['decimals']})
+    target_data.update({"address":item['token_info']['address']})
+    target_data.update({"symbol":item['token_info']['symbol']})
+
+
+# print(target_data)
 
 url2 = "https://cotizaciones-brou.herokuapp.com/api/currency/latest"
 
 headers2 = {"Accept": "application/json"}
 
-response2 = requests.get(url2, headers=headers2)
+responseBROU = requests.get(url2, headers=headers2)
 
-pprint.pprint(response2.json())
-timest = response2.json()['timestamp']
+# pprint.pprint(responseBROU.json())
+timest = responseBROU.json()['timestamp']
+
+buy_price = responseBROU.json()['rates']['USD']['buy']
+sell_price = responseBROU.json()['rates']['USD']['sell']
+average = (buy_price + sell_price)/2
+target_data.update({"FxAverage":average})
+print(target_data)
 """ here we are getting the date in regular
 year-month-day format, apparently at 00:00:00 hours"""
-print(datetime.fromtimestamp(timest))
+# print(datetime.fromtimestamp(timest))
 
 """ We need to somehow save a couple of things
 from both APIS.
@@ -63,4 +81,6 @@ TxData = {"Amount": response['data']['token_info']['value'],
           }
 print(TxData)
 """
+"""
 print(response['data'][0]['decimals'])
+"""
