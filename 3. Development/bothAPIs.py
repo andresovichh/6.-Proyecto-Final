@@ -18,69 +18,90 @@ import json
 import requests
 import pprint
 from datetime import datetime
-url = "https://api.trongrid.io/v1/accounts/TYvYRiuVU6B4dQKTuyhvxxFsJKiJZiTCfL/transactions/trc20?only_confirmed=true&limit=1"
 
-headers = {"Accept": "application/json"}
+def ApisData(TronWallet):
+    # url = "https://api.trongrid.io/v1/accounts/TYvYRiuVU6B4dQKTuyhvxxFsJKiJZiTCfL/transactions/trc20?only_confirmed=true&limit=1"
+    url = "https://api.trongrid.io/v1/accounts/{}/transactions/trc20?only_confirmed=true&limit=1".format(TronWallet)
 
-response = requests.get(url, headers=headers)
+    headers = {"Accept": "application/json"}
 
-# Here we are creating a dict with the data we want
-target_data = {}
-for item in response.json()['data']:
-    target_data.update({"value":item['value']})
-    target_data.update({"Tx_id":item['transaction_id']})
-    target_data.update({"Type":item['type']})
-    target_data.update({"name":item['token_info']['name']})
-    target_data.update({"decimals":item['token_info']['decimals']})
-    target_data.update({"address":item['token_info']['address']})
-    target_data.update({"symbol":item['token_info']['symbol']})
+    response = requests.get(url, headers=headers)
+
+    # Here we are creating a dict with the data we want
+    target_data = {}
+    for item in response.json()['data']:
+        target_data.update({"value":item['value']})
+        target_data.update({"Tx_id":item['transaction_id']})
+        target_data.update({"Type":item['type']})
+        target_data.update({"name":item['token_info']['name']})
+        target_data.update({"decimals":item['token_info']['decimals']})
+        target_data.update({"address":item['token_info']['address']})
+        target_data.update({"symbol":item['token_info']['symbol']})
 
 
-# print(target_data)
+    # print(target_data)
 
-url2 = "https://cotizaciones-brou.herokuapp.com/api/currency/latest"
+    url2 = "https://cotizaciones-brou.herokuapp.com/api/currency/latest"
 
-headers2 = {"Accept": "application/json"}
+    headers2 = {"Accept": "application/json"}
 
-responseBROU = requests.get(url2, headers=headers2)
+    responseBROU = requests.get(url2, headers=headers2)
 
-# pprint.pprint(responseBROU.json())
-timest = responseBROU.json()['timestamp']
+    # pprint.pprint(responseBROU.json())
+    timest = responseBROU.json()['timestamp']
 
-buy_price = responseBROU.json()['rates']['USD']['buy']
-sell_price = responseBROU.json()['rates']['USD']['sell']
-average = (buy_price + sell_price)/2
-target_data.update({"FxAverage":average})
-print(target_data)
-""" here we are getting the date in regular
-year-month-day format, apparently at 00:00:00 hours"""
-# print(datetime.fromtimestamp(timest))
+    buy_price = responseBROU.json()['rates']['USD']['buy']
+    sell_price = responseBROU.json()['rates']['USD']['sell']
+    average = (buy_price + sell_price)/2
+    target_data.update({"FxAverage":average})
+    # print(target_data)
+    return target_data
+    
+    
+    
+    
+if __name__ == '__main__':
+    ApisData()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    """ here we are getting the date in regular
+    year-month-day format, apparently at 00:00:00 hours"""
+    # print(datetime.fromtimestamp(timest))
 
-""" We need to somehow save a couple of things
-from both APIS.
+    """ We need to somehow save a couple of things
+    from both APIS.
 
-From the TRON API we need to store:
+    From the TRON API we need to store:
 
-a. Amount
-b. Decimals
-c. token_info
-d. Type
-e. symbol
-f. name
+    a. Amount
+    b. Decimals
+    c. token_info
+    d. Type
+    e. symbol
+    f. name
 
-From the BROU API we should store:
+    From the BROU API we should store:
 
-a. the exchange rate for the UYU/USD pair
-b. the timestamp
+    a. the exchange rate for the UYU/USD pair
+    b. the timestamp
 
-We should probably create a dict with all that 
-data"""
-"""
-TxData = {"Amount": response['data']['token_info']['value'],
-          "Decimals": response['data']['token_info']['decimals']
-          }
-print(TxData)
-"""
-"""
-print(response['data'][0]['decimals'])
-"""
+    We should probably create a dict with all that 
+    data"""
+    """
+    TxData = {"Amount": response['data']['token_info']['value'],
+            "Decimals": response['data']['token_info']['decimals']
+            }
+    print(TxData)
+    """
+    """
+    print(response['data'][0]['decimals'])
+    """
