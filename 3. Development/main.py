@@ -3,15 +3,18 @@ The ApisData function is called from the main file.
 All you need to pass is a Tron wallet address and it will return
 a dictionary that contains the following:
 
-1. Tx Value
-2. Tx_id
-3. Tx Type
-4. name of token
-5. nbr of decimals
-6. the address of the smartcontract (to check if we are 
-actually working with USDT token)
-7. symbol
-8. Fx average
+From Tron API:
+    1. Tx Value
+    2. Tx_id
+    3. Tx Type
+    4. name of token
+    5. nbr of decimals
+    6. the address of the smartcontract (to check if we are 
+    actually working with USDT token)
+    7. symbol
+
+From BROU API:
+    1. Fx average
 
 """
 
