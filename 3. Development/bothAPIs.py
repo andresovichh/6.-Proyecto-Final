@@ -74,7 +74,7 @@ def ApisData(TronWallet):
     str_len = len(str_value)
     f_value = str_value[:(str_len - decimals)]+ '.' + str_value[(str_len - decimals):]
     # print("---------{}------".format(f_value))
-    target_data['f_value'] = f_value
+    target_data['f_value'] = float(f_value)
     # Up to here, we are converting the int we are given as value into a float,
     # using the decimal places we are given. Eg. value = 50000000, decimals 6,
     # should be equal to f_value = 50.000000
