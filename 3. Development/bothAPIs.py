@@ -38,6 +38,7 @@ def ApisData(TronWallet):
 
     # Here we are creating a dict with the data we want
     target_data = {}
+    # print(response.json()['data'])
     for item in response.json()['data']:
         target_data.update({"value":item['value']})
         target_data.update({"Tx_id":item['transaction_id']})
@@ -46,6 +47,7 @@ def ApisData(TronWallet):
         target_data.update({"decimals":item['token_info']['decimals']})
         target_data.update({"address":item['token_info']['address']})
         target_data.update({"symbol":item['token_info']['symbol']})
+        # target_data.update({"f_value":item[]
 
 
     # print(target_data)
@@ -64,6 +66,19 @@ def ApisData(TronWallet):
     average = (buy_price + sell_price)/2
     target_data.update({"FxAverage":average})
     # print(target_data)
+
+    # From here
+    value = target_data.get('value')
+    decimals = target_data.get('decimals')
+    str_value = str(value)
+    str_len = len(str_value)
+    f_value = str_value[:(str_len - decimals)]+ '.' + str_value[(str_len - decimals):]
+    # print("---------{}------".format(f_value))
+    target_data['f_value'] = f_value
+    # Up to here, we are converting the int we are given as value into a float,
+    # using the decimal places we are given. Eg. value = 50000000, decimals 6,
+    # should be equal to f_value = 50.000000
+    # Finaly, dict is updated with this info, and returned to main.
     return target_data
     
     
