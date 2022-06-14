@@ -12,6 +12,15 @@ would show as "9480000".
 the cryptocurrency we are targeting, we can check that the symbol
 is "USDT" or that the address of the smart contrac is
 "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"
+
+3. According to https://developers.tron.network/docs/block
+"In the TRON network, the block
+interval is 3 seconds, that is,
+a block is generated every 3 seconds."
+
+And for irreversibility to happen, 20 blocks are needed.
+Accordingly, we will be listening for Tx for 1.5 to 2 minutes
+to be safe.
 """
 
 import json
