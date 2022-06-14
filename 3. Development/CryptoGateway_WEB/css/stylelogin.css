@@ -14,6 +14,11 @@ body{
   background: #8c43ff;
   padding: 30px;
 }
+.fa-angle-left {
+  font-size: 1.3em;
+  margin-bottom: 30px;
+  color: #8439fc;
+}
 .container{
   position: relative;
   max-width: 850px;
@@ -118,7 +123,7 @@ body{
   left: 0;
   bottom: 0;
   height: 3px;
-  width: 25px;
+  width: 20px;
   background: #8c43ff;
 }
 .forms .signup-form  .title:before{
@@ -196,6 +201,11 @@ body{
 .container #flip{
   display: none;
 }
+.center{
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
 @media (max-width: 730px) {
   .container .cover{
     display: none;
@@ -212,5 +222,8 @@ body{
   }
   .container #flip:checked ~ .forms .login-form{
     display: none;
+  }
+  .center{
+    width: 60%;
   }
 }

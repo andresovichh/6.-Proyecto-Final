@@ -1,0 +1,68 @@
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #8c43ff;
+  padding: 30px;
+}
+.fa-angle-left {
+  font-size: 1.3em;
+  margin-bottom: 30px;
+  color: #8439fc;
+}
+.container{
+  position: absolute;
+  height: 40%;
+  max-width: 30%;
+  width: 100%;
+  background: #fff;
+  padding: 40px 30px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  perspective: 270px;
+}
+.logol{
+    margin: 20%;
+    position: absolute;
+  height: 40%;
+  max-width: 30%;
+  width: 100%;
+}
+.center{
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+@media (max-width: 730px) {
+    .container{
+        max-width: 70%;
+        height: 50%;
+    }
+  .container .cover{
+    display: none;
+  }
+  .form-content .login-form,
+  .form-content .signup-form{
+    width: 100%;
+  }
+  .form-content .signup-form{
+    display: none;
+  }
+  .container #flip:checked ~ .forms .signup-form{
+    display: block;
+  }
+  .container #flip:checked ~ .forms .login-form{
+    display: none;
+  }
+  .center{
+    width: 60%;
+  }
+}
