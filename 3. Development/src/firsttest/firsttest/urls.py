@@ -20,6 +20,7 @@ from pages.views import login_view
 from pages.views import signup_view
 from pages.views import home_view
 from pages.views import usrhome_view
+from gasstation.views import gasstation_detail_view, gasstation_create_form
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,4 +30,6 @@ urlpatterns = [
     path('login/', login_view),
     path('signup/', signup_view),
     path('usrhome/', usrhome_view),
+    path('detail_view/', gasstation_detail_view),
+    path('create/', gasstation_create_form)
 ]
