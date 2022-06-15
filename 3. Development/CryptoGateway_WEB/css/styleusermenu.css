@@ -1,68 +1,108 @@
 /* Google Font Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins";
-}
 body{
-  min-height: 100vh;
+  min-height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #8c43ff;
+  background: white;
   padding: 30px;
+  font-family: 'Poppins';
 }
-.fa-angle-left {
-  font-size: 1.3em;
-  margin-bottom: 30px;
-  color: #8439fc;
+header{
+  background: #ede2ff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  text-align: center;
+  
+}
+.profilepic{
+  position: relative;
+  top: 25%;
+}
+
+.nombre{
+  color: #8c43ff;
+  text-align: center;
+  font-size: 25px;
 }
 .container{
+  margin-top: 25%;
   position: absolute;
-  height: 40%;
-  max-width: 30%;
-  width: 100%;
-  background: #fff;
-  padding: 40px 30px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-  perspective: 270px;
+  background: #8c43ff;
+  width: 20%;
+  height: 30%;
+  border-radius: 20px;
+  text-align: center;
 }
-.logol{
-    margin: 20%;
-    position: absolute;
-  height: 40%;
-  max-width: 30%;
-  width: 100%;
+.sale{
+  background: white;
+  position:relative;
+  border-radius: 30px;
+  margin: 10px 60px;
+  color: #8c43ff;
+  padding: 5px;
+
 }
-.center{
-  margin-left: auto;
-  margin-right: auto;
-  width: 30%;
+.info{
+  background: white;
+  position:relative;
+  border-radius: 30px;
+  margin: 50px 60px;
+  color: #8c43ff;
+  padding: 5px;
 }
-@media (max-width: 730px) {
-    .container{
-        max-width: 70%;
-        height: 50%;
+.consults{
+  background: white;
+  position:relative;
+  border-radius: 30px;
+  margin: 50px 60px;
+  color: #8c43ff;
+  padding: 5px;
+}
+.next{
+  color: white;
+  margin-top: 20px;
+}
+
+.noline{
+  text-decoration: none;
+}
+.holber a:hover{
+  color: #8c43ff;
+}
+
+footer {
+  text-align: center;
+  padding: 3px;
+  color: white;
+  position: fixed;
+  bottom: 60px;
+}
+
+
+
+@media (max-width: 768px){
+  header{
+      width: 50px;
+      height: 50px;
+      top: 30px;
+      right: 30px;
+  }
+  .nombre{
+      margin-right: auto;
+      text-align: left;
+  }
+  .container{
+      margin-top: 500px;
+      width: 80%;
+      height: 40%;
+  }
+  footer {
+      bottom: 30px;
     }
-  .container .cover{
-    display: none;
-  }
-  .form-content .login-form,
-  .form-content .signup-form{
-    width: 100%;
-  }
-  .form-content .signup-form{
-    display: none;
-  }
-  .container #flip:checked ~ .forms .signup-form{
-    display: block;
-  }
-  .container #flip:checked ~ .forms .login-form{
-    display: none;
-  }
-  .center{
-    width: 60%;
-  }
 }
