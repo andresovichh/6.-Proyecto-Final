@@ -133,4 +133,18 @@ footer {
         top: 40px;
         left: 30px;
     }
+    .sect .circulochico{
+        height: 100px;
+        width: 100px;
+        right: 136px;
+        top: 290px;
+    }
+    
+    .sect .circulogrande{
+        height: 130px;
+        width: 130px;
+        right: 122px;
+        top: 275px;
+    }
+
   }
