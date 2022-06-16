@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Pump Selection</title>
+    <!-- Favicons -->
+    <link rel="icon" href="images/favicons/favicon_cg.png">
+    <!--<title> Login and Registration Form-->
+    <link rel="stylesheet" href="css/teststyle.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+    <header>
+        <div class="profilepic">
+            <a href=""><img src="images/user.png" height="20px"></a>
+        </div>
+    </header>
+    <section class="sect">
+        <div class="titulo">Select Your <br><b>Pump!</b></div>
+        <div class="circulochico"></div>
+        <div class="circulogrande"></div>
+        <div class="imagen"><img src="images/pump_img.png" height="200px"></div>
+        <div class="newdrop">
+            <select class="dropdw" id="mySelect" onchange="urlHandler(this.value)">
+                <option value="select" selected>Select Pump</option>
+                <option value="p1">Pump 1</option>
+                <option value="p2">Pump 2</option>
+                <option value="p3">Pump 3</option>
+                <option value="p4">Pump 4</option>
+                <option value="p5">Pump 5</option>
+                <option value="p6">Pump 6</option>
+            </select>
+        </div>
+    </section>
+
+
+    <footer>
+        <img src="images/logo_CG.png" height="30px">
+    </footer>
+    <script>
+    const changeSelected = (e) => {
+        const $select = document.querySelector('#mySelect');
+        $select.value = 'p2'
+    };
+    function urlHandler(value) {                               
+    window.location.assign(`selldata.html`);
+}
+    </script>
+</body>
