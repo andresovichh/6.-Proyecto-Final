@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Gasstation
 from .forms import GassstationCreateForm, RawProductForm
 # Create your views here.
@@ -42,3 +42,14 @@ def gasstation_create_form(request):
         "form": my_form
     }
     return render(request, "gasstations/gasstation_create.html", context)
+
+def gasstation_list_view(request):
+    queryset = Gasstation.objects.all()
+    context = {
+        "object_list": queryset
+    }
+    return render(request, "gasstations/gasstation_list.html", context)
+
+
+def index(request):
+    return render(request, 'firsttest/index.html')

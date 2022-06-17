@@ -1,0 +1,106 @@
+body{
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 30px;
+    font-family: 'Poppins';
+  }
+  header{
+    background: #ede2ff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    text-align: center;
+    
+  }
+  .profilepic{
+    position: relative;
+    top: 25%;
+  }
+ 
+  .nombre{
+    color: #8c43ff;
+    text-align: center;
+    font-size: 25px;
+  }
+.container{
+    margin-top: 25%;
+    position: absolute;
+    background: #8c43ff;
+    width: 20%;
+    height: 30%;
+    border-radius: 20px;
+    text-align: center;
+}
+.sale{
+    background: white;
+    position:relative;
+    border-radius: 30px;
+    margin: 10px 60px;
+    color: #8c43ff;
+    padding: 5px;
+
+}
+.info{
+    background: white;
+    position:relative;
+    border-radius: 30px;
+    margin: 50px 60px;
+    color: #8c43ff;
+    padding: 5px;
+}
+.consults{
+    background: white;
+    position:relative;
+    border-radius: 30px;
+    margin: 50px 60px;
+    color: #8c43ff;
+    padding: 5px;
+}
+.next{
+    color: white;
+    margin-top: 20px;
+}
+
+.noline{
+    text-decoration: none;
+}
+.holber a:hover{
+    color: #8c43ff;
+}
+
+footer {
+    text-align: center;
+    padding: 3px;
+    color: white;
+    position: fixed;
+    bottom: 60px;
+  }
+
+
+
+  @media (max-width: 768px){
+    header{
+        width: 50px;
+        height: 50px;
+        top: 30px;
+        right: 30px;
+    }
+    .nombre{
+        margin-right: auto;
+        text-align: left;
+    }
+    .container{
+        margin-top: 500px;
+        width: 80%;
+        height: 40%;
+    }
+    footer {
+        bottom: 30px;
+      }
+  }

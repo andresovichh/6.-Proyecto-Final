@@ -20,7 +20,7 @@ from pages.views import login_view
 from pages.views import signup_view
 from pages.views import home_view
 from pages.views import usrhome_view
-from gasstation.views import gasstation_detail_view, gasstation_create_form
+from gasstation.views import gasstation_detail_view, gasstation_create_form, gasstation_list_view, index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,5 +31,8 @@ urlpatterns = [
     path('signup/', signup_view),
     path('usrhome/', usrhome_view),
     path('detail_view/', gasstation_detail_view),
-    path('create/', gasstation_create_form)
+    path('create/', gasstation_create_form),
+    path('gasstations/', gasstation_list_view, name='product-list'),
+    path('new_html/', index, name="index")
+
 ]
