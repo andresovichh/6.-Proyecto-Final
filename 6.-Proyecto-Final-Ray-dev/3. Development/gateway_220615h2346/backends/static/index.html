@@ -37,15 +37,15 @@
 				<div class="collapse navbar-collapse navMenuCollapse">
 					<div class="col-md-5 text-right">
 						<ul class="nav">
-							<li><a href=" {% static 'login.html' %} ">Login</a></li>
-							<li><a href=" {% static 'register.html' %} ">Sign Up</a></li>
+							<li><a href=" {% url 'login' %} ">Login</a></li>
+							<li><a href=" {% url 'register' %} ">Sign Up</a></li>
 							
 						</ul>
 					</div>
 					<div class="col-md-2 text-center hidden-sm hidden-xs"><a class="navbar-brand goto" href=" {% static '#intro-video-background' %} "><img src=" {% static './images/logo_CG.png' %} " height="20" alt="Your logo"></a></div>
 					<div class="col-md-5 text-left">
 						<ul class="nav">
-							<li><a href=" {% static '#content-half-right' %} ">How it Works?</a></li>
+							<li><a href=" {% static 'index.#content-half-right' %} ">How it Works?</a></li>
 							<li><a href=" {% static '#team-circle' %} ">Team</a></li>
 						</ul>
 					</div>

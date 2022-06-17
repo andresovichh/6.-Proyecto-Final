@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -16,10 +17,9 @@
       <div class="position-relative">
         <a href=" {% static 'index.html' %} "><i class="fa fa-angle-left"></i></a>
     </div>
-    <img src=" {% static 'images/logo_CG.png' %} " class="center">
     <div class="cover">
       <div class="front">
-        <img src=" {% static 'images/bg2.jpg' %} " alt="">
+        <img src=" {% static 'images/bg1.jpg' %} " alt="">
         <div class="text">
           <span class="text-1">Start selling wit crypto <br> now!</span>
           <span class="text-2">Let's Start</span>
@@ -36,9 +36,13 @@
     <div class="forms">
         <div class="form-content">
           <div class="login-form">
-            <div class="title">Login</div>
+            <div class="title">Signup</div>
           <form action="usermenu.html">
             <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Enter your name" required>
+              </div>
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
                 <input type="text" placeholder="Enter your email" required>
@@ -51,7 +55,7 @@
               <div class="button input-box">
                 <input type="submit" value="Sumbit">
               </div>
-              <div class="text sign-up-text">Don't have an account? <a href=" {% static 'register.html' %} ">Sigup now</a> </div>
+              <div class="text sign-up-text">Already have an account? <a href=" {% static 'login.html' %} ">Login now</a></div>
             </div>
         </form>
       </div>
