@@ -1,0 +1,159 @@
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+body{
+  min-height: 35vh;
+  display: flex;
+  background: rgb(255, 255, 255);
+  padding: 30px;
+  justify-content: center;
+  font-family: 'Poppins';
+}
+header{
+  background: #ede2ff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  text-align: center;
+  
+}
+
+footer {
+    text-align: center;
+    padding: 3px;
+    color: white;
+    position: fixed;
+    bottom: 60px;
+    left: 45%;
+  }
+  .profilepic{
+    position: relative;
+    top: 25%;
+  }
+
+.sect{
+    width: 400px;
+    height: 600px;
+    position: relative;
+    top: 100px;
+    padding: 30px;
+    text-align: center;
+}
+
+.sect .titulo{
+    color: #8c43ff;
+    text-align: center;
+    font-size: 30px;
+    top: 40%;
+    position: relative;
+
+}
+
+.fillinfo{
+    width: 200px;
+    height: 40px;
+    position: fixed;
+    background: #8c43ff;
+    margin-top:260px;
+    left:45%;
+    border-radius: 25px;
+    color: white;
+    text-align: center;
+
+}
+
+.amount_to{
+
+    position: relative;
+    margin-top: 9px;
+}
+
+
+.backbuttom{
+    background: #ede2ff;
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.fa-angle-left{
+    position: relative;
+    top: 10%;
+}
+
+
+
+.testcet{
+    position: relative;
+    margin-top: 80%;
+    margin-right: 10%;
+}
+
+.button{
+    background-color: #8c43ff;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    width: 50px;
+}
+
+.qrimg{
+    position: fixed;
+    top: 120px;
+    left: 43%;
+}
+
+
+@media (max-width: 768px){
+    header{
+        width: 50px;
+        height: 50px;
+        top: 30px;
+        right: 30px;
+    }
+    footer {
+        bottom: 30px;
+        left: 65px;
+    }
+    footer img{
+        height: 30px;
+    }
+    .newdrop{
+        right:95px;
+     }
+     .backbuttom{
+        top: 40px;
+        left: 30px;
+    }
+    .testcet{
+        margin-top: 330px;
+        margin-right:18%;
+    }
+    .fillinfo{
+        width: 200px;
+        height: 40px;
+        margin-top: 270px;
+        left:90px;
+    }
+
+    .amount_to{
+
+        margin-top: 9px;
+    }
+    .qrimg{
+        position: fixed;
+        top: 130px;
+        left: 17%;
+    }
+  }

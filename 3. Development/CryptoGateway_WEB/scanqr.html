@@ -2,11 +2,11 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title>Sell Data</title>
+    <title>Scan QR</title>
     <!-- Favicons -->
     <link rel="icon" href="images/favicons/favicon_cg.png">
     <!--<title> Login and Registration Form-->
-    <link rel="stylesheet" href="css/styleselldata.css">
+    <link rel="stylesheet" href="css/stylescanqr.css">
     <!-- Fontawesome CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,24 +18,15 @@
         </div>
     </header>
     <div class="backbuttom">
-        <a href="pump_selection.html"><i class="fa fa-angle-left"></i></a>
+        <a href="selldata.html"><i class="fa fa-angle-left"></i></a>
     </div>
     <section class="sect">
-        <div class="titulo">You are selling <br>in <b>Pump 1</b></div>
-        <div class="newdrop">
-            <select class="dropdw" id="mySelect" >
-                <option value="select" selected>Type</option>
-                <option value="p1">Super</option>
-                <option value="p2">Premium</option>
-                <option value="p3">Gasoil 50-S</option>
-                <option value="p4">Gasoil 10-S</option>
-            </select>
-        </div>
+        <div class="qrimg"><img src="images/qrcode.jpg" height="250px"></div>
+        <div class="titulo">Amount to <br><b>Transfer</b></div>
         <div class="fillinfo">
-            <input class="liter" type="text" placeholder="Liter">
-            <input class="amount" type="text" placeholder="Amount">
+            <div class="amount_to">20</div>
         </div>
-        <div class="testcet"><button  id="continueboton" class="button">Continue</button></div>
+        <div class="testcet"><button  id="continueboton" class="button">Ok</button></div>
 
     </section>
 
@@ -45,7 +36,7 @@
     </footer>
     <script>
         document.getElementById("continueboton").onclick = function () {
-        location.href = "scanqr.html";
+        location.href = "index.html";
     };
     </script>
     
