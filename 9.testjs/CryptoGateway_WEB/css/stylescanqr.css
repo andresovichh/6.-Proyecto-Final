@@ -111,7 +111,7 @@ footer {
 .qrimg{
     position: fixed;
     top: 120px;
-    left: 43%;
+    left: 45%;
 }
 
 
@@ -154,6 +154,6 @@ footer {
     .qrimg{
         position: fixed;
         top: 130px;
-        left: 17%;
+        left: 90px;
     }
   }

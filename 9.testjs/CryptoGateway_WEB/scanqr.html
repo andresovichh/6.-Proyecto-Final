@@ -27,10 +27,10 @@
         </div>
         <div class="titulo">Amount to <br><b>Transfer</b></div>
         <div class="fillinfo">
-            <div class="amount_to">20</div>
+            <div class="amount_to"><b id="amount_to_usd"></b></div>
             <h1 id="selpump"></h1>
         </div>
-        <div class="testcet"><button  id="continueboton" class="button">Ok</button></div>
+        <div class="testcet"><button  id="continueboton" onclick="checkTran" class="button">Ok</button></div>
 
     </section>
     <!-- <h1 id="pump_selected"></h1> -->
@@ -62,7 +62,7 @@
         text: selected_pump,
         width: 200,
         height: 200,
-        colorDark : "#5868bf",
+        colorDark : "#8c43ff",
         colorLight : "#ffffff",
         correctLevel : QRCode.CorrectLevel.H
     });
@@ -73,4 +73,5 @@
     console.log(peso_amount);
     </script>
     <script src="scripts/scanqr.js"></script>
+    <script src="scripts/checktran.js"></script>
 </body>
