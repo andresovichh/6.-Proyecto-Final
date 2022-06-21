@@ -43,11 +43,15 @@
     <script>
     const changeSelected = (e) => {
         const $select = document.querySelector('#ageselect');
-        $select.value = 'p2'
+        // $select.text = 'p2'
+        // console.log(e);
+
     };
-    function urlHandler(value) {                               
-    window.location.assign(`html/selldata.html`);
+    function urlHandler(text) {
+    window.location.assign(`selldata.html`);
+    sessionStorage.setItem('pump_name', text);
 }
+
     </script>
     <script src="scripts/test.js"></script>
 </body>

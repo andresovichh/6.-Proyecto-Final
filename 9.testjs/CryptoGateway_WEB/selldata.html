@@ -21,8 +21,8 @@
         <a href="pump_selection.html"><i class="fa fa-angle-left"></i></a>
     </div>
     <section class="sect">
-        <div class="titulo">You are selling <br>in <b>Pump 1</b></div>
-        <div class="newdrop">
+        <div class="titulo">You are selling <br>at <b id="pump_selected"></b></div>
+        <!-- <div class="newdrop">
             <select class="dropdw" id="mySelect" >
                 <option value="select" selected>Type</option>
                 <option value="p1">Super</option>
@@ -30,9 +30,9 @@
                 <option value="p3">Gasoil 50-S</option>
                 <option value="p4">Gasoil 10-S</option>
             </select>
-        </div>
+        </div> -->
         <div class="fillinfo">
-            <input class="liter" type="text" placeholder="Liter">
+            <!-- <input class="liter" type="text" placeholder="Liter"> -->
             <input class="amount" type="text" placeholder="Amount">
         </div>
         <div class="testcet"><button  id="continueboton" class="button">Continue</button></div>
@@ -47,6 +47,15 @@
         document.getElementById("continueboton").onclick = function () {
         location.href = "scanqr.html";
     };
+    </script>
+    <script>
+        // var queryString = location.search.substring(1);
+        // var a = queryString.split("|");
+        // var value1 = a[0];
+        var selected_pump = sessionStorage.getItem('pump_name');
+        console.log(selected_pump);
+        document.getElementById("pump_selected").innerHTML = selected_pump;
+        
     </script>
     
 </body>

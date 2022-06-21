@@ -35,7 +35,7 @@ fetch(api_url, requestOptions).then((data)=>{
 }).then((completedata)=>{
   // here I am getting the name of each one of the pumps
   // that the user can see
-  // console.log(completedata);
+  console.log(completedata);
     // console.log(completedata[0].name);
     completedata.forEach((item) => {
       // creating an array with only the name of the pumps
@@ -58,14 +58,3 @@ fetch(api_url, requestOptions).then((data)=>{
       selectElement.add(new Option(item));
     });
   })
-
-  // function myFunction() {
-  //   var x = document.getElementById("root");
-  //   var txt = "All options: ";
-  //   var i;
-  //   for (i = 0; i < x.length; i++) {
-  //     txt = txt + "\n" + x.options[i].text;
-  //   }
-    
-  // alert(txt);
-  // }
