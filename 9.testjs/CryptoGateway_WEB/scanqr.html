@@ -21,14 +21,26 @@
         <a href="selldata.html"><i class="fa fa-angle-left"></i></a>
     </div>
     <section class="sect">
-        <div class="qrimg"><img src="images/qrcode.jpg" height="250px"></div>
+        <div class="qrimg">
+            <!-- <img src="images/qrcode.jpg" height="250px"> -->
+            <div id="qrcode-2"></div>
+        </div>
         <div class="titulo">Amount to <br><b>Transfer</b></div>
         <div class="fillinfo">
             <div class="amount_to">20</div>
+            <h1 id="selpump"></h1>
         </div>
         <div class="testcet"><button  id="continueboton" class="button">Ok</button></div>
 
     </section>
+    <!-- <h1 id="pump_selected"></h1> -->
+    <script get_pump_name.js>
+    
+    var selected_pump = sessionStorage.getItem('wallet_id');
+        console.log(selected_pump);
+        document.getElementById("pump_selected").innerHTML = selected_pump;
+    
+    </script>
 
 
     <footer>
@@ -38,6 +50,22 @@
         document.getElementById("continueboton").onclick = function () {
         location.href = "index.html";
     };
+    </script>
+    <!-- Load the library -->
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    
+    <!-- With some options -->
+    
+    
+    <script type="text/javascript">
+    var qrcode = new QRCode(document.getElementById("qrcode-2"), {
+        text: selected_pump,
+        width: 128,
+        height: 128,
+        colorDark : "#5868bf",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });
     </script>
     
 </body>
