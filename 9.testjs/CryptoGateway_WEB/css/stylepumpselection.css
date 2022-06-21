@@ -1,0 +1,150 @@
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+body{
+  min-height: 35vh;
+  display: flex;
+  background: rgb(255, 255, 255);
+  padding: 30px;
+  justify-content: center;
+  font-family: 'Poppins';
+}
+header{
+  background: #ede2ff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  text-align: center;
+  
+}
+
+footer {
+    text-align: center;
+    padding: 3px;
+    color: white;
+    position: fixed;
+    bottom: 60px;
+    left: 45%;
+  }
+  .profilepic{
+    position: relative;
+    top: 25%;
+  }
+
+.sect{
+    width: 400px;
+    height: 600px;
+    position: relative;
+    top: 100px;
+    padding: 30px;
+    text-align: center;
+}
+
+.sect .titulo{
+    color: #8c43ff;
+    text-align: center;
+    font-size: 30px;
+
+}
+
+.sect .circulochico{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background: #b07eff;
+    position: fixed;
+    right: 910px;
+    top: 290px;
+}
+
+.sect .circulogrande{
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    background: #8c43ff;
+    position: fixed;
+    right: 895px;
+    top: 275px;
+    z-index: -1;
+}
+.sect .imagen{
+    position: relative;
+    margin-top: 50px;
+
+}
+
+
+
+.newdrop{
+   margin-top: 20px;
+   position: relative;
+   right:24%;
+
+}
+.dropdw{
+    padding: 10px;
+  color: white;
+  border: 2px solid #8031ff;
+  background: #8c43ff;
+  position: fixed;
+  border-radius: 25px;
+  text-align: center;
+  width: 200px;
+  font-weight: bold;
+}
+
+.backbuttom{
+    background: #ede2ff;
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.fa-angle-left{
+    position: relative;
+    top: 10%;
+}
+
+
+
+@media (max-width: 768px){
+    header{
+        width: 50px;
+        height: 50px;
+        top: 30px;
+        right: 30px;
+    }
+    footer {
+        bottom: 30px;
+        left: 65px;
+    }
+    footer img{
+        height: 30px;
+    }
+    .newdrop{
+        right:95px;
+     }
+     .backbuttom{
+        top: 40px;
+        left: 30px;
+    }
+    .sect .circulochico{
+        height: 100px;
+        width: 100px;
+        right: 136px;
+        top: 290px;
+    }
+    
+    .sect .circulogrande{
+        height: 130px;
+        width: 130px;
+        right: 122px;
+        top: 275px;
+    }
+
+  }
