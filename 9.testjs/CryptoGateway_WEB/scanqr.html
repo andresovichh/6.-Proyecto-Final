@@ -60,12 +60,17 @@
     <script type="text/javascript">
     var qrcode = new QRCode(document.getElementById("qrcode-2"), {
         text: selected_pump,
-        width: 128,
-        height: 128,
+        width: 200,
+        height: 200,
         colorDark : "#5868bf",
         colorLight : "#ffffff",
         correctLevel : QRCode.CorrectLevel.H
     });
+
     </script>
-    
+    <script>
+    var peso_amount = sessionStorage.getItem("peso_amount");
+    console.log(peso_amount);
+    </script>
+    <script src="scripts/scanqur.js"></script>
 </body>

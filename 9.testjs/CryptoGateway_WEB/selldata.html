@@ -57,5 +57,18 @@
         document.getElementById("pump_selected").innerHTML = selected_pump;
         
     </script>
+    <script>
+    var inputClass = document.getElementsByClassName('amount');
+
+    for (var i = 0, ii = inputClass.length; i < ii ; i++) {
+       inputClass[i].addEventListener('blur', doSomething);
+    }
+    
+    function doSomething() {
+        var inputField = this;
+        console.log(inputField.value);
+        sessionStorage.setItem('peso_amount', inputField.value);
+    }
+    </script>
     <script src="get_pump_name.js"> selected_pump</script>
 </body>
