@@ -26,29 +26,23 @@
         <div class="circulogrande"></div>
         <div class="imagen"><img src="images/pump_img.png" height="200px"></div>
         <div class="newdrop">
-            <select class="dropdw" id="mySelect" onchange="urlHandler(this.value)">
-                <option value="select" selected>Select Pump</option>
-                <option value="p1">Pump 1</option>
-                <option value="p2">Pump 2</option>
-                <option value="p3">Pump 3</option>
-                <option value="p4">Pump 4</option>
-                <option value="p5">Pump 5</option>
-                <option value="p6">Pump 6</option>
+            <select id="ageselect" class="dropdw" onchange="urlHandler(this.value)">
+                <option value="select" selected>Please select</option>
             </select>
-        </div>
-    </section>
 
 
     <footer>
         <img src="images/logo_CG.png" height="30px">
     </footer>
+    <script src="scripts/displaynames.js"></script>
+    <script src="scripts/getpump_id.js"></script>
     <script>
     const changeSelected = (e) => {
-        const $select = document.querySelector('#mySelect');
-        $select.value = 'p2'
+        const $select = document.querySelector('#ageselect');
     };
-    function urlHandler(value) {                               
+    function urlHandler(text) {
     window.location.assign(`selldata.html`);
+    sessionStorage.setItem('pump_name', text);
 }
     </script>
 </body>

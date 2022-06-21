@@ -21,27 +21,22 @@
         <a href="usermenu.html"><i class="fa fa-angle-left"></i></a>
     </div>
     <!--GAS STATION NAME-->
-    <div class="nombre">Gas Station <b>Name</b></div>
-    <div class="mypumps">My Pumps</div>
-
-    <!--ADD PUMPS HERE-->
-    <div class="testcet"><button class="button">Add</button></div>
-
-
-    <div class="mywallets">My Wallets</div>
-
-    <div class="text_pump"><p>Select Pump</p></div>
-    <div class="newdrop">
-        <select class="dropdw" id="mySelect">
-            <option value="select" selected>Select Pump</option>
-            <option value="p1">Pump 1</option>
-            <option value="p2">Pump 2</option>
-            <option value="p3">Pump 3</option>
-            <option value="p4">Pump 4</option>
-            <option value="p5">Pump 5</option>
-            <option value="p6">Pump 6</option>
-        </select>
+    <div class="nombre">Gas Station <b id="gastation_name"></b></div>
+    <div class="mypumps">Add Pump</div>
+    <div>
+        <input class="pumpname" id="pump_name" type="text" placeholder="Pump Name">
     </div>
+    <div class="mywallets">Wallet</div>
+    <div>
+        <input class="pumpwallet" id="pump_wallet" type="text" placeholder="Pump Wallet">
+    </div>
+    <!--ADD PUMPS HERE-->
+    <div class="testcet"><button class="button" onclick="pumpnames()">Save</button></div>
+
+
+
+
+
         
 
 
@@ -51,6 +46,7 @@
     <footer>
         <img src="images/logo_CG.png" height="30px">
     </footer>
+    <script src="scripts/pumps_wallets.js"></script>
     <script>
     const changeSelected = (e) => {
         const $select = document.querySelector('#mySelect');
@@ -59,3 +55,8 @@
         
         </script>
 </body>
+
+
+
+
+
