@@ -8,7 +8,11 @@ fetch(urlbrou).then((data)=>{
     return data.json();
 }).then((completedata)=>{
     var cotiza = completedata.rates.USD.sell;
+    var trunki = peso_amount / cotiza;
+    var myTrunc = trunki.toFixed(2);
     console.log(cotiza);
-    document.getElementById('amount_to_usd').innerHTML = peso_amount / cotiza;
+    console.log(myTrunc);
+    document.getElementById('amount_to_usd').innerHTML = myTrunc;
+    
 });
 
