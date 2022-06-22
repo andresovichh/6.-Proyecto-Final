@@ -60,7 +60,7 @@ header{
     text-align: center;
     font-size: 20px;
     position:absolute;
-    margin-top: 100px;
+    margin-top: 130px;
 }
 .mywallets{
   color: #8c43ff;
@@ -157,7 +157,20 @@ footer {
   bottom: 41%;
 }
 
+.address_station{
+  font-size: 15px;
+  margin: 20px 20px;
+  position: absolute;
+  top: 200px;
+  color: #acacac;
+  font-weight: lighter;
+  text-align: center;
+}
+
 @media (max-width: 768px){
+  .address_station{
+    top: 177px;
+  }
   header{
       width: 50px;
       height: 50px;

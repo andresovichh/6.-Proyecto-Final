@@ -27,3 +27,4 @@ function pumpnames(){
         console.log(pump_names)
         console.log(pump_walletts)
 }
+

@@ -21,7 +21,8 @@
         <a href="usermenu.html"><i class="fa fa-angle-left"></i></a>
     </div>
     <!--GAS STATION NAME-->
-    <div class="nombre">Gas Station <b id="gastation_name"></b></div>
+    <div class="nombre"><b id="gastation_name"></b></div>
+    <p class="address_station" id="address_station"></p>
     <div class="mypumps">Add Pump</div>
     <div>
         <input class="pumpname" id="pump_name" type="text" placeholder="Pump Name">
@@ -47,6 +48,7 @@
         <img src="images/logo_CG.png" height="30px">
     </footer>
     <script src="scripts/pump_wallets.js"></script>
+    <script src="scripts/namestation.js"></script>
     <script>
     const changeSelected = (e) => {
         const $select = document.querySelector('#mySelect');
