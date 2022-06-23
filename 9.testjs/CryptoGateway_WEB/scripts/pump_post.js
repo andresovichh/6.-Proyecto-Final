@@ -18,7 +18,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("https://44.204.28.37/api/pump/", requestOptions)
+fetch("http://44.204.28.37:8000/api/pump/", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
