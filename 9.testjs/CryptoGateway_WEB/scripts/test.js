@@ -18,7 +18,11 @@
 
 
   // ------new
+<<<<<<< HEAD
 const api_url = "http://44.204.28.37:8000/api/pump/"
+=======
+const api_url = "http://44.204.28.37:8000/api/pump/?format=json"
+>>>>>>> 151dc1da0417f82d1451dd46560944a3ebecd0ff
 var myHeaders = new Headers();
 myHeaders.append("Authorization", "Basic YW5kcmVzOmFuZHJlcw==");
 // Define an array to store the names of the pumps
