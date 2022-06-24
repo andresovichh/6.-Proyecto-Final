@@ -21,7 +21,6 @@ body{
     padding: 10px;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
 }
 .subcontainer1:hover{
     background: #8036f7;
@@ -48,6 +47,7 @@ body{
     width: auto;
     margin: 20px 10%;
     border-radius: 15px;
+    cursor: pointer;
 }
 .subcontainer1 h3{
     color: white;

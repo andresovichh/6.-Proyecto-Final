@@ -8,9 +8,12 @@ fetch(urlbrou).then((data)=>{
     return data.json();
 }).then((completedata)=>{
     var cotiza = completedata.rates.USD.sell;
-    var trunki = peso_amount / cotiza;
+    var cotiza2 = completedata.rates.USD.buy;
+    var prome = (cotiza + cotiza2) / 2;
+    var trunki = peso_amount / prome;
     var myTrunc = trunki.toFixed(2);
     console.log(cotiza);
+    console.log(prome);
     console.log(myTrunc);
     document.getElementById('amount_to_usd').innerHTML = myTrunc;
     
