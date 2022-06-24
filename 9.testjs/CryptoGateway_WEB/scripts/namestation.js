@@ -1,4 +1,4 @@
-var urlstation = "http://44.204.28.37:8000/api/gas/";
+var urlstation = "https://www.andreshenderson.tech/api/gas/";
 var myHeaders = new Headers();
 myHeaders.append("Authorization", "Basic YW5kcmVzOmFuZHJlcw==");
 
