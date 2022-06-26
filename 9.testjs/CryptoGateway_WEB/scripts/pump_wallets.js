@@ -24,7 +24,7 @@ function pumpnames(){
       .then(response => response.text())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
-        console.log(pump_names)
-        console.log(pump_walletts)
+        console.log(pump_names);
+        console.log(pump_walletts);
 }
 

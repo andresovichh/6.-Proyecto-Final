@@ -18,4 +18,14 @@ fetch(urlbrou).then((data)=>{
     document.getElementById('amount_to_usd').innerHTML = myTrunc;
     
 });
+document.getElementById('continueboton').disabled = true;
+document.getElementById('amountpeso').addEventListener('keyup', e => {
+  //Check for the input's value
+  if (e.target.value == "") {
+    document.getElementById('continueboton').disabled = true;
+  }
+  else {
+    document.getElementById('continueboton').disabled = false;
+  }
+});
 

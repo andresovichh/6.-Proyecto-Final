@@ -1,62 +1,48 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <title>Info</title>
-    <!-- Favicons -->
-    <link rel="icon" href="images/favicons/favicon_cg.png">
-    <!--<title> Login and Registration Form-->
-    <link rel="stylesheet" href="css/stylemodifyinfo.css">
-    <!-- Fontawesome CDN Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
-   <body>
-    <header>
-        <div class="profilepic">
-            <a href=""><img src="images/user.png" height="20px"></a>
-        </div>
-    </header>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>My Gas Station</title>
+        <!-- Favicons -->
+        <link rel="icon" href="images/favicons/favicon_cg.png">
+        <!--<title> Login and Registration Form-->
+        <link rel="stylesheet" href="css/stylemodifyinfo.css">
+        <!-- Fontawesome CDN Link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       </head>
+<body>
     <div class="backbuttom">
         <a href="usermenu.html"><i class="fa fa-angle-left"></i></a>
     </div>
-    <!--GAS STATION NAME-->
-    <div class="nombre"><b id="gastation_name"></b></div>
-    <p class="address_station" id="address_station"></p>
-    <div class="mypumps">Add Pump</div>
-    <div>
-        <input class="pumpname" id="pump_name" type="text" placeholder="Pump Name">
+    <div class="container2"></div>
+    <div class="container">
+        <p>Modify your <br><b>Gas Station!</b></p>
+        <div class="newdrop">
+            <p>Add Pump name</p>
+            <input class="pumpname" id="pump_name"  type="text" placeholder="Pump Name">
+        </div>
+        <div class="newdrop">
+            <p>Add Wallet address</p>
+            <input  class="pumpwallet" type="text" id="pump_wallet" placeholder="Pump Wallet">
+        </div>
+        <div class="testcet">
+            <button class="button" onclick="pumpnames()">Save</button>
+        </div>
     </div>
-    <div class="mywallets">Wallet</div>
-    <div>
-        <input class="pumpwallet" id="pump_wallet" type="text" placeholder="Pump Wallet">
-    </div>
-    <!--ADD PUMPS HERE-->
-    <div class="testcet"><button class="button" onclick="pumpnames()">Save</button></div>
-
-
-
-
-
-        
-
-
-      
-
-
     <footer>
         <img src="images/logo_CG.png" height="30px">
     </footer>
     <script src="scripts/pump_wallets.js"></script>
     <script src="scripts/namestation.js"></script>
     <script>
-    const changeSelected = (e) => {
+        const changeSelected = (e) => {
         const $select = document.querySelector('#mySelect');
         $select.value = 'p2'
-    };
-        
-        </script>
+    }
+    </script>
 </body>
+</html>
 
 
 

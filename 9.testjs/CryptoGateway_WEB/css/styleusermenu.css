@@ -5,7 +5,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #8c43ff;
+  background: white;
   padding: 30px;
   font-family: 'Poppins';
 }
@@ -30,7 +30,7 @@ body{
     margin: 30px;
 }
 .container2{
-    border: 2px solid white;
+    border: 3px solid #8036f7;
     position: fixed;
     top: 22%;
     left: 31%;
