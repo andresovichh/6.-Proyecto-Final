@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Sell Data</title>
+        <!-- Favicons -->
+        <link rel="icon" href="images/favicons/favicon_cg.png">
+        <!--<title> Login and Registration Form-->
+        <link rel="stylesheet" href="css/styleselldata.css">
+        <!-- Fontawesome CDN Link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       </head>
+<body>
+    <div class="backbuttom">
+        <a href="pump_selection.html"><i class="fa fa-angle-left"></i></a>
+    </div>
+    <div class="container2"></div>
+    <div class="container">
+        <p>Your are selling <br>at <b id="pump_selected"></b></p>
+        <div class="newdrop">
+            <select class="dropdw" id="mySelect" >
+                <option value="select" selected>Type</option>
+                <option value="p1">Super</option>
+                <option value="p2">Premium</option>
+                <option value="p3">Gasoil 50-S</option>
+                <option value="p4">Gasoil 10-S</option>
+            </select>
+        </div>
+        <div class="newdrop">
+            <input class="amount" id="amountpeso"  type="number" placeholder="Amount">
+        </div>
+        <div class="newdrop">
+            <input  type="number" id="literam" placeholder="Liter">
+        </div>
+        <div class="testcet">
+            <button  id="continueboton" class="button">Continue</button>
+        </div>
+
+    </div>
+    <footer>
+        <img src="images/logo_CG_blanco.png" height="30px">
+    </footer>
+    <script>
+        document.getElementById("continueboton").onclick = function () {
+        location.href = "scanqr.html";
+    };
+    </script>
+    <script>
+        // var queryString = location.search.substring(1);
+        // var a = queryString.split("|");
+        // var value1 = a[0];
+        var selected_pump = sessionStorage.getItem('pump_name');
+        console.log(selected_pump);
+        document.getElementById("pump_selected").innerHTML = selected_pump;
+        
+    </script>
+    <script>
+    var inputClass = document.getElementsByClassName('amount');
+
+    for (var i = 0, ii = inputClass.length; i < ii ; i++) {
+       inputClass[i].addEventListener('blur', doSomething);
+    }
+    
+    function doSomething() {
+        var inputField = this;
+        console.log(inputField.value);
+        sessionStorage.setItem('peso_amount', inputField.value);
+    }
+    </script>
+
+    <script src="get_pump_name.js"> selected_pump</script>
+    <script src="scripts/scanqr.js"> selected_pump</script>
+</body>
+</html>

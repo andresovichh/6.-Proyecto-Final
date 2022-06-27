@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fail Transaction</title>
+    <!-- Favicons -->
+    <link rel="icon" href="images/favicons/favicon_cg.png">
+    <!--<title> Login and Registration Form-->
+    <link rel="stylesheet" href="css/stylefailqr.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <img class="logo_cg" src="images/logo_CG.png" height="30px">
+        <div class="linediv"></div>
+        <img class="checklogo" src="images/fail.png" height="120px">
+        <p class="textsuccsess"><b>Opsss!</b></p>
+        <p class="subtextsuccsess">There was an error completing <br> the transaction...</p>
+        <div class="testcet">
+            <button id="returnbutton" class="button">Return</button>
+            <button id="homebutton" class="buttonhome">Home</button>
+        </div>
+
+    </div>
+    
+    <!--Script to go back home when click-->
+    <script>
+        document.getElementById("homebutton").onclick = function () {
+        location.href = "usermenu.html";
+        }
+        document.getElementById("returnbutton").onclick = function () {
+        location.href = "scanqr.html";
+    };
+    </script>
+</body>
+</html>
