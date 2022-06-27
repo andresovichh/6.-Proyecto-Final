@@ -21,88 +21,88 @@ there have been any transactions against the trongri api.
 */
 // var pump_id = document.getElementById("pump_wallet").value;
 
-var pump_id = "TXSw8R2k8h9GnaYjWAvtHxKB5AAa6A3jQX";
+//var pump_id = document.getElementById("pump_wallet").value;
+
 function first_tx() {
   const options = {method: 'GET', headers: {Accept: 'application/json'}};
   var tx_value;
+  var pump_id = document.getElementById("pump_wallet").value;
   fetch('https://api.trongrid.io/v1/accounts/' + pump_id + '/transactions/trc20?only_confirmed=true&&only_to=true&limit=1', options)
-    .then(response => response.json())
-    .then(data => {
-      /* Here we check and retrieve the value from the trongrid
-      api, if data is NOT undefined, then we asume we have retrieved
-      a transaction*/
+          .then(response => response.json())
+          .then(data => {
+          /* Here we check and retrieve the value from the trongrid
+          api, if data is NOT undefined, then we asume we have retrieved
+                a transaction*/
+                  if (data.data[0] !== undefined)
+                  {
 
-      if (data.data[0] !== undefined)
-      {
+    tx_value = data.data[0].value
+    console.log("there was a tx its id is: " + data.data[0].transaction_id);
+    /*
+    post a tx to https://www.andreshenderson.tech/api/tran/
+    post the transaction_id to the api
+    */
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Basic YW5kcmVzOmFuZHJlcw==");
+    myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
-          tx_value = data.data[0].value
-          console.log("there was a tx its id is: " + data.data[0].transaction_id);
-          /*
-          post a tx to https://www.andreshenderson.tech/api/tran/
-          post the transaction_id to the api
-          */
-          var myHeaders = new Headers();
-          myHeaders.append("Authorization", "Basic YW5kcmVzOmFuZHJlcw==");
-          myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+    var urlencoded = new URLSearchParams();
+    //urlencoded.append("cripto_id", data.data[0].transaction_id);
+    urlencoded.append("cripto_id", pump_id);
+    urlencoded.append("amount_uy", "0");
+    urlencoded.append("total", tx_value);
+    console.log("Value of existing TX is:" + tx_value);
+    console.log("tx value has 6 zeros from end");
+    // we are passing value 3 in order to
+    // be able to identify this transaction as a
+    // first transaction
+    urlencoded.append("status_tr", "3");
 
-          var urlencoded = new URLSearchParams();
-          //urlencoded.append("cripto_id", data.data[0].transaction_id);
-          urlencoded.append("cripto_id", pump_id);
-          urlencoded.append("amount_uy", "0");
-          urlencoded.append("total", tx_value);
-          console.log(tx_value)
-          // we are passing value 3 in order to
-          // be able to identify this transaction as a
-          // first transaction
-          urlencoded.append("status_tr", "3");
-          
-          urlencoded.append("user", "1");
-          urlencoded.append("pump_id", pump_id);
+    urlencoded.append("user", "1");
+    urlencoded.append("pump_id", pump_id);
 
-          var requestOptions = {
-          method: 'POST',
-          headers: myHeaders,
-          body: urlencoded,
-          redirect: 'follow'
-          };
+    var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: urlencoded,
+    redirect: 'follow'
+    };
 
-          fetch("https://www.andreshenderson.tech/api/tran/", requestOptions)
-          .then(response => response.text())
-          .then(result => console.log(result))
-          .catch(error => console.log('error', error));
-      }
-      // if there was no Tx retrieved from the trongrid api:
-      else
-      {
-      console.log("no data, therefore, empty tx is created")
-      var myHeaders = new Headers();
-          myHeaders.append("Authorization", "Basic YW5kcmVzOmFuZHJlcw==");
-          myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
-
-          var urlencoded = new URLSearchParams();
-          urlencoded.append("cripto_id", pump_id);
-          urlencoded.append("amount_uy", "0");
-          urlencoded.append("total", "0");
-          // set status_tr = 3 to identify this transaction
-          urlencoded.append("status_tr", "3");
-          urlencoded.append("user", "1");
-          urlencoded.append("pump_id", pump_id);
-
-          var requestOptions = {
-          method: 'POST',
-          headers: myHeaders,
-          body: urlencoded,
-          redirect: 'follow'
-          };
-
-          fetch("https://www.andreshenderson.tech/api/tran/", requestOptions)
-          .then(response => response.text())
-          .then(result => console.log(result))
-          .catch(error => console.log('error', error));
-      }
-      // console.log(typeof(data.length))
-      })
-    .catch(err => console.error(err));
+    fetch("https://www.andreshenderson.tech/api/tran/", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log("SUCCESS: A TX WAS POSTED:" + result))
+    .catch(error => console.log('error', error));
 }
+// if there was no Tx retrieved from the trongrid api:
+else
+{
+    console.log("no data, therefore, empty tx is created")
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Basic YW5kcmVzOmFuZHJlcw==");
+    myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
-first_tx();
+    var urlencoded = new URLSearchParams();
+    urlencoded.append("cripto_id", pump_id);
+    urlencoded.append("amount_uy", "0");
+    urlencoded.append("total", "0");
+    // set status_tr = 3 to identify this transaction
+    urlencoded.append("status_tr", "3");
+    urlencoded.append("user", "1");
+    urlencoded.append("pump_id", pump_id);
+
+    var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: urlencoded,
+    redirect: 'follow'
+    };
+
+    fetch("https://www.andreshenderson.tech/api/tran/", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log("SUCCESS: A TX WAS POSTED:" + result))
+    .catch(error => console.log('error', error));
+}
+// console.log(typeof(data.length))
+})
+.catch(err => console.error(err));
+}                             
