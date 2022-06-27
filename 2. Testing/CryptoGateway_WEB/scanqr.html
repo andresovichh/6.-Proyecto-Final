@@ -1,79 +1,72 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <title>Scan QR</title>
-    <!-- Favicons -->
-    <link rel="icon" href="images/favicons/favicon_cg.png">
-    <!--<title> Login and Registration Form-->
-    <link rel="stylesheet" href="css/stylescanqr.css">
-    <!-- Fontawesome CDN Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
-   <body>
-    <header>
-        <div class="profilepic">
-            <a href=""><img src="images/user.png" height="20px"></a>
-        </div>
-    </header>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Scan Qr</title>
+        <!-- Favicons -->
+        <link rel="icon" href="images/favicons/favicon_cg.png">
+        <!--<title> Login and Registration Form-->
+        <link rel="stylesheet" href="css/stylescanqr.css">
+        <!-- Fontawesome CDN Link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       </head>
+<body>
     <div class="backbuttom">
         <a href="selldata.html"><i class="fa fa-angle-left"></i></a>
     </div>
-    <section class="sect">
-        <div class="qrimg">
-            <!-- <img src="images/qrcode.jpg" height="250px"> -->
-            <div id="qrcode-2"></div>
-        </div>
-        <div class="titulo">Amount to <br><b>Transfer</b></div>
-        <div class="fillinfo">
-            <div class="amount_to"><b id="amount_to_usd"></b></div>
-            <h1 id="selpump"></h1>
-        </div>
+    <div class="container2"></div>
+    <div class="container">
+        <div id="qrcode-2"></div>
+        <p>Amount to <b>Transfer</b></p>
+        <div class="containeramount"><b id="amount_to_usd"></b></div>
         <div class="testcet"><button  id="continueboton" onclick="checkTran" class="button">Ok</button></div>
-
-    </section>
-    <!-- <h1 id="pump_selected"></h1> -->
-    <script get_pump_name.js>
-    
-    var selected_pump = sessionStorage.getItem('wallet_id');
-        console.log(selected_pump);
-        //document.getElementById("pump_selected").innerHTML = selected_pump;
-    
-    </script>
-
-
+    </div>
     <footer>
         <img src="images/logo_CG.png" height="30px">
     </footer>
-    <script>
-        document.getElementById("continueboton").onclick = function () {
-        location.href = "success_qr.html";
-    };
-    </script>
-    <!-- Load the library -->
-    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-    
-    <!-- With some options -->
-    
-    
-    <script type="text/javascript">
-    var qrcode = new QRCode(document.getElementById("qrcode-2"), {
-        text: selected_pump,
-        width: 200,
-        height: 200,
-        colorDark : "#8c43ff",
-        colorLight : "#ffffff",
-        correctLevel : QRCode.CorrectLevel.H
-    });
 
-    </script>
-    <script>
-    var peso_amount = sessionStorage.getItem("peso_amount");
-   // var dolar_amount = peso_amount / 41.2;
-    //document.getElementById('amount_to_usd').innerHTML = dolar_amount;
-    console.log(peso_amount);
-    </script>
-    <script src="scripts/scanqr.js"></script>
-    <script src="scripts/checktran.js"></script>
+
+
+    <script get_pump_name.js>
+    
+        var selected_pump = sessionStorage.getItem('wallet_id');
+            console.log(selected_pump);
+            //document.getElementById("pump_selected").innerHTML = selected_pump;
+        
+        </script>
+    
+    
+
+        <script>
+            document.getElementById("continueboton").onclick = function () {
+            location.href = "success_qr.html";
+        };
+        </script>
+        <!-- Load the library -->
+        <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+        
+        <!-- With some options -->
+        
+        
+        <script type="text/javascript">
+        var qrcode = new QRCode(document.getElementById("qrcode-2"), {
+            text: selected_pump,
+            width: 200,
+            height: 200,
+            colorDark : "#8c43ff",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+    
+        </script>
+        <script>
+        var peso_amount = sessionStorage.getItem("peso_amount");
+       // var dolar_amount = peso_amount / 41.2;
+        //document.getElementById('amount_to_usd').innerHTML = dolar_amount;
+        console.log(peso_amount);
+        </script>
+        <script src="scripts/scanqr.js"></script>
+        <script src="scripts/checktran.js"></script>
 </body>
+</html>
