@@ -32,7 +32,7 @@
         <input class="pumpwallet" id="pump_wallet" type="text" placeholder="Pump Wallet">
     </div>
     <!--ADD PUMPS HERE-->
-    <div class="testcet"><button class="button" onclick="pumpnames()">Save</button></div>
+    <div class="testcet"><button class="button" onclick="pumpnames(); first_tx()">Save</button></div>
 
 
 
@@ -49,6 +49,7 @@
     </footer>
     <script src="scripts/pump_wallets.js"></script>
     <script src="scripts/namestation.js"></script>
+    <script src="scripts/check_1st_tx.js"></script>
     <script>
     const changeSelected = (e) => {
         const $select = document.querySelector('#mySelect');
