@@ -109,16 +109,14 @@ function check_and_store_tx() {
                             if (response.data[0].value == "1000000")
                             {
                                 console.log("Transaction value is correct");
-                                window.location.replace("https://andreshenderson.tech/success_qr.html")
+                                window.location.replace("https://www.google.com")
                                 clearInterval(interval);
 
                             }
                             // Tx value is incorrect, therefore unsuccessful
                             else{
                                 console.log("Transaction value is incorrect");
-                                // window.location.replace("https://andreshenderson.tech/success_qr.html")
-                                window.location.replace("https://www.google.com");
-                                clearInterval(interval);
+                                //clearInterval(interval);
                             }
                         }
                     }
