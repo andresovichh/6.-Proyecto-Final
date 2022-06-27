@@ -1,5 +1,7 @@
 /*
-This module is used to check the trongrid api for incoming transactions.
+This module is used to check the trongrid api for incoming transactions
+AND creates 1st transaction against which we will check
+for new transactions.
 
 Then:
   if a Tx was found, it will post the Tx to our API with
@@ -11,40 +13,29 @@ Then:
   "status_tr" set to 3.
 
 */
-var results;
-async function getIP() {
-  var myHeaders = new Headers();
-  myHeaders.append("Authorization", "Basic YW5kcmVzOmFuZHJlcw==");
 
+/* 
+First we have to get the wallet_id of the user-selected pump
+in order to pass it to the functions below that will check if
+there have been any transactions against the trongri api.
+*/
+// var pump_id = document.getElementById("pump_wallet").value;
 
-  var requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-
-    redirect: 'follow'
-  };
-
-  var resu = await fetch("http://44.204.28.37:8000/api/pump/", requestOptions)
-    .then(response => response.text())
-    //.then(result => console.log(result))
-    .then((result) => result.json())
-    .catch(error => console.log('error', error));
-
-  }
-
-getIP();
-
+var pump_id = "TXSw8R2k8h9GnaYjWAvtHxKB5AAa6A3jQX";
 function first_tx() {
   const options = {method: 'GET', headers: {Accept: 'application/json'}};
-
-  fetch('https://api.trongrid.io/v1/accounts/TYvYRiuVU6B4dQKTuyhvxxFsJKiJZiTCfL/transactions/trc20?only_confirmed=true&&only_to=true&limit=1', options)
+  var tx_value;
+  fetch('https://api.trongrid.io/v1/accounts/' + pump_id + '/transactions/trc20?only_confirmed=true&&only_to=true&limit=1', options)
     .then(response => response.json())
     .then(data => {
       /* Here we check and retrieve the value from the trongrid
-      api*/
-      if (data.data[0].transaction_id)
+      api, if data is NOT undefined, then we asume we have retrieved
+      a transaction*/
+
+      if (data.data[0] !== undefined)
       {
-          
+
+          tx_value = data.data[0].value
           console.log("there was a tx its id is: " + data.data[0].transaction_id);
           /*
           post a tx to https://www.andreshenderson.tech/api/tran/
@@ -56,12 +47,17 @@ function first_tx() {
 
           var urlencoded = new URLSearchParams();
           //urlencoded.append("cripto_id", data.data[0].transaction_id);
-          urlencoded.append("cripto_id","wallet_address");
+          urlencoded.append("cripto_id", pump_id);
           urlencoded.append("amount_uy", "0");
-          urlencoded.append("total", "0");
-          urlencoded.append("status_tr", "testt");
-          urlencoded.append("user", "2");
-          //urlencoded.append("pump_id", 3);
+          urlencoded.append("total", tx_value);
+          console.log(tx_value)
+          // we are passing value 3 in order to
+          // be able to identify this transaction as a
+          // first transaction
+          urlencoded.append("status_tr", "3");
+          
+          urlencoded.append("user", "1");
+          urlencoded.append("pump_id", pump_id);
 
           var requestOptions = {
           method: 'POST',
@@ -72,24 +68,25 @@ function first_tx() {
 
           fetch("https://www.andreshenderson.tech/api/tran/", requestOptions)
           .then(response => response.text())
-          // .then(result => console.log(result))
+          .then(result => console.log(result))
           .catch(error => console.log('error', error));
       }
       // if there was no Tx retrieved from the trongrid api:
       else
       {
-      console.log("no data")
+      console.log("no data, therefore, empty tx is created")
       var myHeaders = new Headers();
           myHeaders.append("Authorization", "Basic YW5kcmVzOmFuZHJlcw==");
           myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
           var urlencoded = new URLSearchParams();
-          urlencoded.append("cripto_id", "1");
+          urlencoded.append("cripto_id", pump_id);
           urlencoded.append("amount_uy", "0");
           urlencoded.append("total", "0");
+          // set status_tr = 3 to identify this transaction
           urlencoded.append("status_tr", "3");
-          urlencoded.append("user", "2");
-          urlencoded.append("pump_id", "1");
+          urlencoded.append("user", "1");
+          urlencoded.append("pump_id", pump_id);
 
           var requestOptions = {
           method: 'POST',
@@ -100,11 +97,12 @@ function first_tx() {
 
           fetch("https://www.andreshenderson.tech/api/tran/", requestOptions)
           .then(response => response.text())
-          // .then(result => console.log(result))
+          .then(result => console.log(result))
           .catch(error => console.log('error', error));
       }
+      // console.log(typeof(data.length))
       })
     .catch(err => console.error(err));
 }
 
-//first_tx();
+first_tx();
