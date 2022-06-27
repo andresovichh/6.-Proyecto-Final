@@ -26,6 +26,7 @@ there have been any transactions against the trongri api.
 function first_tx() {
   const options = {method: 'GET', headers: {Accept: 'application/json'}};
   var tx_value;
+  var tx_id;
   var pump_id = document.getElementById("pump_wallet").value;
   fetch('https://api.trongrid.io/v1/accounts/' + pump_id + '/transactions/trc20?only_confirmed=true&&only_to=true&limit=1', options)
           .then(response => response.json())
@@ -37,6 +38,7 @@ function first_tx() {
                   {
 
     tx_value = data.data[0].value
+    tx_id = data.data[0].transaction_id
     console.log("there was a tx its id is: " + data.data[0].transaction_id);
     /*
     post a tx to https://www.andreshenderson.tech/api/tran/
@@ -48,7 +50,7 @@ function first_tx() {
 
     var urlencoded = new URLSearchParams();
     //urlencoded.append("cripto_id", data.data[0].transaction_id);
-    urlencoded.append("cripto_id", pump_id);
+    urlencoded.append("cripto_id", tx_id);
     urlencoded.append("amount_uy", "0");
     urlencoded.append("total", tx_value);
     console.log("Value of existing TX is:" + tx_value);
@@ -82,7 +84,7 @@ else
     myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
     var urlencoded = new URLSearchParams();
-    urlencoded.append("cripto_id", pump_id);
+    urlencoded.append("cripto_id", "No_Tx_Found");
     urlencoded.append("amount_uy", "0");
     urlencoded.append("total", "0");
     // set status_tr = 3 to identify this transaction
