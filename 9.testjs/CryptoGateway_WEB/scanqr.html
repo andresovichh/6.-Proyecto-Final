@@ -30,7 +30,7 @@
             <div class="amount_to"><b id="amount_to_usd"></b></div>
             <h1 id="selpump"></h1>
         </div>
-        <div class="testcet"><button  id="continueboton" onclick="checkTran" class="button">Ok</button></div>
+        <div class="testcet"><button  id="continueboton" class="button" onclick="onclick = check_and_store_tx ()">Ok</button></div>
 
     </section>
     <!-- <h1 id="pump_selected"></h1> -->
@@ -50,7 +50,7 @@
     //     document.getElementById("continueboton").onclick = function () {
     //     location.href = "success_qr.html";
     // };
-    document.getElementById("continueboton").onclick = check_and_store_tx ();
+    // document.getElementById("continueboton").onclick = check_and_store_tx ();
     </script>
     <!-- Load the library -->
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
@@ -77,5 +77,5 @@
     </script>
     <script src="scripts/scanqr.js"></script>
     <script src="scripts/checktran.js"></script>
-    <script src="check_and_store_tx.js"></script>
+    <script src="scripts/check_and_store_tx.js"></script>
 </body>

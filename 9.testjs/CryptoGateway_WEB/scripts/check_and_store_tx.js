@@ -8,6 +8,8 @@ function check_and_store_tx() {
     Then, we have to sort the array by the date in order to get
     the last Tx id for that pump.
     */
+    var needle = "TK8ooYkVidQDSjag8T1ZSdJPxXgVa1NtSc";
+    //var needle = sessionStorage.getItem("wallet_id");
     var last_tx_arr = new Array();
     var res;
     const api_url = "https://www.andreshenderson.tech/api/tran/"
@@ -29,9 +31,10 @@ function check_and_store_tx() {
       // that the user can see
       // console.log(completedata);
       // Here we get the name of the user-selected pump
-      var needle = "TQC1Tmn1jufXpxXu2fqeTzrRYorZAYCuEF";
+     // var needle = sessionStorage.getItem("wallet_id");
     // This matches a pump name with a wallet_id
     // iterate over each element in the array
+    
     const txs = new Array();
     for (var i = 0; i < completedata.length; i++){
       // look for the entry with a matching `code` value
@@ -55,6 +58,7 @@ function check_and_store_tx() {
     }
    
     };
+    console.log(txs);
     // sort results in ascending order
     txs.sort((a, b) => b.id - a.id);
     // then get Tx at index 0, which is the last Tx
@@ -69,13 +73,15 @@ function check_and_store_tx() {
         console.log(last_tx);
         last_tx_arr.push(last_tx);
         // ---------------------------------------------------------
+        var startTime = Date.now();
+        while((Date.now() - startTime) < 30000) {
         var interval = setInterval(function (){
             var requestOptions = {
                 method: 'GET',
                 redirect: 'follow'
               };
-              console.log("THIS IS THE LAST" + last_tx_arr[0].cripto_id);
-              fetch("https://api.trongrid.io/v1/accounts/TYvYRiuVU6B4dQKTuyhvxxFsJKiJZiTCfL/transactions/trc20?only_confirmed=true&limit=1", requestOptions)
+              console.log("THIS IS THE LAST :" + last_tx_arr[0].cripto_id);
+              fetch('https://api.trongrid.io/v1/accounts/' + needle + '/transactions/trc20?only_confirmed=true&limit=1', requestOptions)
                 .then(function (response) {
                     return response.json();
                 })
@@ -103,36 +109,46 @@ function check_and_store_tx() {
                         */
                         else
                         {
-                        console.log("Transaction HAS changed :" + response.data[0].transaction_id);
+                        console.log("Transaction HAS changed : " + response.data[0].transaction_id);
                         // clearInterval(interval);
+                        
+                        console.log("This is the total amount of out last recorded tx our api: " + last_tx.total);
                         // check if the Tx value is same as ours
-                            if (response.data[0].value == "1000000")
+                            if (response.data[0].value == last_tx.total)
                             {
                                 console.log("Transaction value is correct");
-                                window.location.replace("https://andreshenderson.tech/success_qr.html")
+                                console.log("Our amount was : " + last_tx.total);
+                                clearInterval(interval);
+                                window.location.href("https://andreshenderson.tech/success_qr.html")
                                 clearInterval(interval);
 
                             }
                             // Tx value is incorrect, therefore unsuccessful
                             else{
                                 console.log("Transaction value is incorrect");
-                                // window.location.replace("https://andreshenderson.tech/success_qr.html")
-                                window.location.replace("https://www.google.com");
+                                console.log("Tron amnt : " + response.data[0].value);
+                                console.log("Our amount was : " + last_tx.total);
                                 clearInterval(interval);
+                                window.location.href("https://andreshenderson.tech/fail_qr.html")
+                                //window.location.replace("https://www.google.com");
+                                
+                                
                             }
+                            
                         }
+                
                     }
                     else {
-                        console.log("Transaction hasn't changed");
+                        console.log("There wasn't a Tx in the Trom API");
                         // clearInterval(interval);
                     }
                 // if (last_tx == response.json()[0].id) {
                 //     console.log("Transaction has been confirmed");
                 // }
                 })
-        }, 1500);
+        }, 10000);
         // Run for at most, 120000 miliseconds, equal to 2 minutes
-        setTimeout(function( ) { clearInterval( interval ); }, 6000);
+    }
         
     
         //----------------------------------------------------------
@@ -140,13 +156,7 @@ function check_and_store_tx() {
     });
 
 ;}
-    
-    
-    
-    
-    
-    
-    
+check_and_store_tx();
     
     
     
@@ -173,4 +183,3 @@ function check_and_store_tx() {
     //   console.log(found);
     
 
-check_and_store_tx();

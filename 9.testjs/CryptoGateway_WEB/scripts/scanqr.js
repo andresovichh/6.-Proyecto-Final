@@ -16,6 +16,7 @@ fetch(urlbrou).then((data)=>{
     console.log(prome);
     console.log(myTrunc);
     document.getElementById('amount_to_usd').innerHTML = myTrunc;
+    sessionStorage.setItem('amount_to_usd', myTrunc);
     
 });
 
