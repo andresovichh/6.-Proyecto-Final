@@ -21,13 +21,13 @@ CryptoGateway was born from the need for operators and consumers to have new pay
 <p align="center">Select Pump</p>
 
 <p align="center">
-<img src="https://github.com/andresovichh/6.-Proyecto-Final/blob/master/images/select%20pump.jpeg" class="centerImage" width="400" height="600" />
+<img src="https://github.com/andresovichh/6.-Proyecto-Final/blob/master/images/select%20pump.jpeg" class="centerImage" width="600" height="400" />
 </p>
 
 <p align="center">Modify Info</p>
 
 <p align="center">
-<img src="https://github.com/andresovichh/6.-Proyecto-Final/blob/master/images/modify.jpeg" class="centerImage" width="400" height="600" />
+<img src="https://github.com/andresovichh/6.-Proyecto-Final/blob/master/images/modify.jpeg" class="centerImage" width="600" height="400" />
 </p>
 
 ## Technologies
