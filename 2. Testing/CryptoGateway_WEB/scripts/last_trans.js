@@ -30,7 +30,21 @@
     document.getElementById('container-trans').innerHTML=data1;
 })*/
 
-fetch('https://www.andreshenderson.tech/api/tran/').then((data)=>{
+const api_url = 'https://www.andreshenderson.tech/api/tran/';
+var myHeaders = new Headers();
+myHeaders.append("Authorization", "Basic YW5kcmVzOmFuZHJlcw==");
+// Define an array to store the names of the pumps
+const pumps = new Array();
+
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+
+// LEER - EL CODIGO DE ABAJO DEBERIA FUNCIONAR Y MOSTRAR TODAS LAS TRANSACCIONES
+
+fetch(api_url, requestOptions).then((data)=>{
     return data.json();
 }).then((completedata)=>{
     let data1 = "";
