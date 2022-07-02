@@ -1,0 +1,72 @@
+/* Google Font Link */
+
+body{
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("images/background404.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 30px;
+  font-family: 'Poppins';
+}
+.container{
+
+    position: absolute;
+    top: 20%;
+    width: 40%;
+    height: 55%;
+    text-align: center;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    color: #8c43ff;
+    font-size: 200px;
+    margin-top: -50px;
+}
+.firstp{
+    color: #8c43ff;
+    margin-top: -190px;
+    font-size: 32px;
+    font-weight: bold;
+}
+.secondp{
+    color: #8c43ff;
+    font-size: 21px;
+    margin-top: -35px;
+}
+.contboton{
+    position: relative;
+    background: #8c43ff;
+    color: white;
+    font-weight: 600;
+    padding: 20px 0;
+    height: 20px;
+    width: 50%;
+    left: 25%;
+    cursor: pointer;
+}
+.contboton:hover{
+    background: #7e2ffc;
+}
+
+@media (max-width: 768px){
+
+    .container{
+        width: 70%;
+        height: 60%;
+        top: 15%;
+    }
+    h1{
+        font-size: 100px;
+    }
+}
+
+
+
