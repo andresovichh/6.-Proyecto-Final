@@ -17,6 +17,12 @@ fetch(urlbrou).then((data)=>{
     console.log(myTrunc);
     document.getElementById('amount_to_usd').innerHTML = myTrunc;
     sessionStorage.setItem('amount_to_usd', myTrunc);
+    var tipo = document.getElementById("mySelect");
+    var litros = document.getElementById("literam");
+    var p_amount = document.getElementById("amountpeso");
+    sessionStorage.setItem("type", tipo.value);
+    sessionStorage.setItem("liters", litros.value);
+    sessionStorage.setItem("amount_uy", p_amount.value);
     
 });
 
