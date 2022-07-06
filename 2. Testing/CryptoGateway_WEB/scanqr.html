@@ -17,7 +17,7 @@
     </div>
     <div class="container2"></div>
     <div class="container">
-        <div class="qrdisplay" id="qrcode-2"><img src="images/qrcode.jpg" height="200px"></div>
+        <div class="qrdisplay" id="qrcode-2"></div>
         <p>Amount to <b>Transfer</b></p>
         <div class="containeramount"><b id="amount_to_usd"></b></div>
         <div class="testcet"><button  id="continueboton" onclick="check_and_store_tx ()" class="button">Ok</button></div>
@@ -51,7 +51,7 @@
         
         <script type="text/javascript">
         var qrcode = new QRCode(document.getElementById("qrcode-2"), {
-            text: selected_pump,
+            text: "hola",
             width: 200,
             height: 200,
             colorDark : "#8c43ff",

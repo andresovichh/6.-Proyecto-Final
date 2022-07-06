@@ -48,8 +48,8 @@ body{
 }
 
 .qrdisplay{
+    left: 280px;
     position: relative;
-    text-align: center;
 }
 
 .container p{
@@ -128,5 +128,9 @@ footer {
     }
     .containeramount{
         width: 40%;
+    }
+    .qrdisplay{
+        left: 30px;
+        position: relative;
     }
 }
