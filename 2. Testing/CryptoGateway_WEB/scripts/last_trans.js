@@ -49,7 +49,7 @@ fetch(api_url, requestOptions).then((data)=>{
 }).then((completedata)=>{
     let data1 = "";
     completedata.map((values)=>{
-        data1+= `<div class="divi_lines"></div> <p> ${values.amount_uy} - $U ${values.liters} - ${values.fuel}</p>`;
+        data1+= `<div class="divi_lines"></div> <p> Liters: ${values.liters} - $U ${values.amount_uy} - Type: ${values.fuel}</p>`;
     });
     document.getElementById('container-trans').innerHTML=data1;
 })

@@ -46,8 +46,10 @@ body{
     align-items: center;
     justify-content: center;
 }
-.qrimage{
-    margin: 5%;
+
+.qrdisplay{
+    position: relative;
+    text-align: center;
 }
 
 .container p{
