@@ -104,12 +104,11 @@ Created by:
         sudo docker exec -ti <name of my container> bash
     
     6. Once inside the container, we install Django by running:
-
-        install_django.sh
+        'install_django.sh'
     
     7. After installing Django:
 
-        pip3 install tzdata
+        'pip3 install tzdata'
     
     8. Inside settings.py:
 
