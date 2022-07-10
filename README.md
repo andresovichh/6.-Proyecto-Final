@@ -75,12 +75,12 @@ Created by:
     
     1. First, you can run the script we have provided you to install Docker by following these steps:
         
-            a.  chmod u+x install_docker.sh
-            b. ./install_docker.sh
+            chmod u+x install_docker.sh
+            ./install_docker.sh
 
     or you can use a way provided by Docker:
 
-        a. curl -fsSL https://get.docker.com -o get-docker.sh
+            curl -fsSL https://get.docker.com -o get-docker.sh
 
     2. run:
 
@@ -89,7 +89,7 @@ Created by:
     3. Then we pull an image for our django project, here we will be installing
     the latest version of Django:
 
-        sudo docker pull fnndsc/ubuntu_python3
+            sudo docker pull fnndsc/ubuntu_python3
 
     4. Then we RUN a container from this image we just downloaded. Special care should be taken as ports must be carefully chosen so the image can be accessed from outside the container and the server.
 
