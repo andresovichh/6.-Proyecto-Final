@@ -124,9 +124,9 @@ Created by:
 
     1. Inside the server, run:
     
-        docker_install.sh
+            docker_install.sh
 
-        sudo chmod 666 /var/run/docker.sock
+            sudo chmod 666 /var/run/docker.sock
 
     2. Then we create an Nginx Docker that will be using files placed at the source in the host server with the following command:
 
