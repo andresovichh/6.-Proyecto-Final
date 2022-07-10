@@ -1,0 +1,88 @@
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+body{
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  padding: 30px;
+  font-family: 'Poppins';
+}
+.backbuttom{
+    border: 2px solid #8c43ff;
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.fa-angle-left{
+    color: #8c43ff;
+    position: relative;
+    top: 10%;
+}
+.container{
+    width: 30%;
+    height: 500px;
+    background:white;
+    top: 26%;
+    position: absolute;
+    text-align: center;
+    border-radius: 15px;
+    overflow:scroll;
+}
+
+.divi_lines{
+    position: relative;
+    height: 2px;
+    width: 70%;
+    background: #8c43ff;
+    left: 15%;
+    margin: 30px 0;
+}
+p{
+    color: #8c43ff;
+}
+.nombre{
+    color: #8c43ff;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 50px;
+  }
+
+
+  /* width */
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #8c43ff; 
+    border-radius: 10px;
+  }
+
+  @media (max-width: 768px){
+    .container{
+        top: 30%;
+        max-height: 400px;
+        width: 70%;
+        border-radius: 0px;
+    }
+    ::-webkit-scrollbar {
+        width: 5px;
+      }
+  }
+  footer {
+    text-align: center;
+    position: fixed;
+    bottom: 5%;
+  }
