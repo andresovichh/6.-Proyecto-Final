@@ -45,10 +45,10 @@ CryptoGateway was born from the need for operators and consumers to have new pay
 <img src="https://github.com/andresovichh/6.-Proyecto-Final/blob/master/images/the-architecture.jpg" class="centerImage" />
 ></p>
 
-### Libraries and tools
+### Technologies
 
 <p align="center">
-<img src="https://github.com/Ouyei/CriptoGateway/blob/main/images/Stack.png" width="700" height="500">
+<img src="https://github.com/andresovichh/6.-Proyecto-Final/blob/master/images/the-technologies.jpg" class="centerImage" />
 </p>
 
 ## Features
