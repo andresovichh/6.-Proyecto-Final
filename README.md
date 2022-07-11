@@ -63,9 +63,11 @@ Considerations for improvement:
 
 Landing page: [here](https://www.andreshenderson.tech/)
 
-## Contact
+## Team
 
-Created by:
+<p align="center">
+<img src="https://github.com/andresovichh/6.-Proyecto-Final/blob/master/images/the-team.jpg" class="centerImage" />
+</p>
 
 - [Andres Henderson](https://github.com/andresovichh)
 - [Raymundo Barrera](https://github.com/RayBar72)
