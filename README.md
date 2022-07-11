@@ -1,4 +1,4 @@
-![Logo](https://github.com/Ouyei/CriptoGateway/blob/main/images/logo_CG_blanco.png) 
+![Logo](https://github.com/andresovichh/6.-Proyecto-Final/blob/master/images/logo_CG_blanco.png) 
 
 CryptoGateway was born from the need for operators and consumers to have new payment methods and cryptocurrency. As a differential, our solution helps gas station operators to have a new collection method, but which in turn does not generate additional costs. On the consumer's side, you can add an easy, fast and secure method to your payment options.
 
