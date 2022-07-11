@@ -43,7 +43,7 @@ CryptoGateway was born from the need for operators and consumers to have new pay
 
 <p align="center">
 <img src="https://github.com/andresovichh/6.-Proyecto-Final/blob/master/images/the-architecture.jpg" class="centerImage" />
-></p>
+</p>
 
 ### Technologies
 
